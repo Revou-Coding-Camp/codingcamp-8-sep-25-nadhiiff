@@ -1,0 +1,78 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+
+    background: rgba(42, 42, 42, 0.6);
+    backdrop-filter: blur(10px);        
+    -webkit-backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+/* Logo */
+.logo-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-image: url('../images/nadhifSelfie.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navbar */
+nav ul {
+    display: flex;
+    gap: 16px; /* jarak antar menu */
+}
+
+nav ul li a {
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+/* Global style */
+body {
+    background-color: #1f1f1f; /* abu-abu gelap */
+    color: #ffffff; /* font putih */
+    font-family: Arial, Helvetica, sans-serif; /* biar lebih rapi */
+}
+
+
+/* Project cards */
+#portofolio .border {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+/* Form */
+#contact input,
+#contact textarea {
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #bbb;
+}
+
+section {
+    scroll-margin-top: 100px; 
+}
