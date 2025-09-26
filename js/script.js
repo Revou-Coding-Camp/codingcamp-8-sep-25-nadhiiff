@@ -1,11 +1,21 @@
-welcomeMessage();
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedElements = document.querySelectorAll(".animate-fadeUp");
 
-function welcomeMessage(name) {
-    let username = prompt("Please enter your name:", "user");
-    if (username){
-        document.getElementById("welcome-user").innerText = username;
-    }
-}
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target); // biar animasi jalan sekali
+      }
+    });
+  }, {
+    threshold: 0.2 // elemen harus 20% masuk layar
+  });
+
+  animatedElements.forEach(el => observer.observe(el));
+});
+
 
 function validateForm() {
     let name = document.getElementById('name').value;
@@ -21,3 +31,5 @@ function validateForm() {
         document.getElementById('message').value = "";
     }
 }
+
+
