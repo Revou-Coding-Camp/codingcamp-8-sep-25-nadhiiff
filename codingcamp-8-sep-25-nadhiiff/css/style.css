@@ -1,0 +1,124 @@
+/* ========== GLOBAL ========== */
+body {
+  background-color: #1f1f1f;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  scroll-margin-top: 120px; /* supaya tidak ketiban navbar */
+}
+
+/* ========== HEADER ========== */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  border: 1px solid #555;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #444;
+  border-color: #777;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  section:first-of-type {
+    margin-top: 80px;
+  }
+}
+
+/* ========== PROJECT CARDS ========== */
+#portofolio .border {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#portofolio .border:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  border-color: #3b82f6; /* blue-500 */
+}
+
+#contact input,
+#contact textarea {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #bbb;
+}
+
+/* Scroll offset khusus section */
+#about { scroll-margin-top: 60px; }
+#contact { scroll-margin-top: 100px; }
+
+/* ========== ANIMATIONS ========== */
+
+/* Keadaan awal: sembunyi */
+.animate-fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Saat masuk layar */
+.animate-fadeUp.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay opsional */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
